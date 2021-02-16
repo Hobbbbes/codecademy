@@ -4,12 +4,14 @@
 int main() {
 
 srand (time(NULL));
-int comp = rand() % 5 + 1;
+int comp = rand() % 5 + 1; // Random seed gen + computer value is <= 5 while !0 (which is why we have the + 1)
 
 int user=0;
 
+ // Essentially just RPS, but with two added moves (so total, 5 * 4 possible win/lose possibilities, 5 * 5 possiblities including ties)
+ 
 std::cout << "====================\n";
-std::cout << "rock paper scissors!\n";
+std::cout << "rock paper scissors lizard spock!\n";
 std::cout << "====================\n";
  
 std::cout << "1) ✊\n";
@@ -21,12 +23,15 @@ std::cout << "5) Spock\n";
 std::cout << "shoot! \n";
 std::cin >> user;
 
+ /* Same as before, we begin by checking the value immediately between user and the random seed, if they're the same,
+ we go straight to tie and don't run anything else */
+ 
 if(user == comp) {
   std::cout << "Tie.\n";
 } else {
-  switch(user) {
+  switch(user) { // Same thing, we just use a switch statement instead of if-tree just for simplicitiy sake 
    case 1:
-    switch(comp) {
+    switch(comp) { // Because our possible outcomes is increased by 2 for each option we have, I decided to also move from if/else if to switch statements for our cases
       case 2:
         std::cout << "Paper beats rock! You lose.\n";
         break;
@@ -125,6 +130,7 @@ if(user == comp) {
   }
 }
 
+ // Manual check
 std::cout << comp << "\n";
 std::cout << user << "\n\n";
 }
