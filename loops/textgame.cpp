@@ -1,13 +1,18 @@
+/* I originally utilized an x++ incrementer to tell the program when the next block should execute since I didn't completely think out any of this,
+but realistically all I really needed to do was utilize 'return 0;' and I could have basically done the same job. */
+
 #include <iostream>
 
 int main() {
 
-int tries = 0;
-std::string user;
-int c1, c2, c3;
-std::string sc1;
-int x = 0;
+int tries = 0; // Utilized in a loop later
+std::string user; // Username
+int c1, c2, c3; // User choices
+std::string sc1; // This really wasn't necessary but I didn't want to remove it
+int x = 0; // Used for telling the next block when to execute
 
+  
+  // Game start!
 std::cout << "==========================\n";
 std::cout << "Goblin's Den: A Text Based Adventure Game\n";
 std::cout << "==========================\n\n";
@@ -19,17 +24,20 @@ std::cout << "Well, you see " << user << ", we've been waiting for you. It might
 std::cout << "Do you help? Y (1) or N (2)\n\n";
 std::cin >> c1;
 
+  // Begin first game block
 if(x == 0) {
   switch(c1){
    case 1:
      sc1 = "\nExcellent!\n\n";
-     x++;
+     x++; // Allow next block to execute
      break;
    case 2:
      std::cout << "A shame.\nUnfortunately, this game must not continue. We shall terminate the program, even at the cost of our own lives.\n\nFarewell.\n\n";
+     return 0; // Kill program
      break;
    default:
      std::cout << "Invalid input, program terminated.\n";
+     return 0;
      break;
   }
 }
@@ -70,9 +78,10 @@ if (x == 4) {
 if (x == 5) {
   std::cout << "\nyou really only have three choices.\n\n1) you delete this program\n2) you delete system32, and lose all your data along with it\n3) you find your way out\n\nwhich do you choose?\n\n";
 }
-
 std::cin >> c3;
-if(c3 == 0) {
+
+  // Strange loop - The only winning move is not to play.
+  if(c3 == 0) {
     std::cout << "You found the correct input. Program terminated.\n";
   } else if (c3 == 1 || c3 == 2 || c3 == 3) {
 
