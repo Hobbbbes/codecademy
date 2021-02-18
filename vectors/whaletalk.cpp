@@ -20,12 +20,7 @@ for(int i = 0; i < text.size(); i++) { // Create a cycle through our string we w
   for (int x = 0; x < vowels.size(); x++) { // Create an inner loop that cycles through all our vowels
 
     
-    /* So our if statement below is a bit blurry without proper explanation; essentially, we've created two loops -
-    one cycles through every character within our input string, while the other cycles through every vowel within our 
-    vector. Because our loops are nested, it goes as such; When a character is being input via our first loop, our second
-    loop then takes action - it cycles through every vowel and compares it - when comparing, if the character we're on is
-    equal to one of any of our vowels in our vector, we add it to our result vector, otherwise we don't do anything. So here's
-    a TL;DR - Loop through every character in our input string, but for each character we're on, we loop through all our vowels
+    /* Loop through every character in our input string, but for each character we're on, we loop through all our vowels
     to compare it to - if our input character is a match with any vowel within our vector, add it to the result vector */
     
     
