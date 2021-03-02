@@ -3,7 +3,7 @@
 #include <string>
 
 // Define functions
-
+// These first two functions are self-explanitory
 void greet(){
   std::cout << "=============\n";
   std::cout << "UFO: The Game\n";
@@ -21,20 +21,24 @@ void end_game(std::string answer, std::string codeword) {
   
 }
 
+/* We want to write our incorrect guesses to our vector, so we need to introduce it as a parameter - We made this as a void function since
+all we want to do is print to the terminal, not return a given type value since no other function is going to utilize it */
+
 void display_status(std::string answer, std::vector<char> incorrect) {
 
-std::cout << "\nIncorrect Guesses: \n";
+std::cout << "\nIncorrect Guesses: \n"; // Display the incorrect characters we guessed so our user knows what they've already guessed
   for(int z = 0; z < incorrect.size(); z++) {
     std::cout << incorrect[z] << ' ';
   }
 
-std::cout << "\nCodeword: \n";
+std::cout << "\nCodeword: \n"; // Display the characters the user currently has correct and the ones that are currently missing
   for(int x = 0; x < answer.length(); x++) {
    std::cout << answer[x] << ' ';
   }
   
 }
 
+//Codecademy gave us this stuff so
 void display_misses(int misses) {
 
   if (misses == 0 || misses == 1) {
