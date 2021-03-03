@@ -29,8 +29,18 @@ std::cout << "Select the square you'd like by inputting the square number.\n";
 
 // The switches can probably be their own function, but it doesn't really make too grand of a difference 
 void gameBoard(char input, int nSquare) { // Make sure a tile with a character can't be overwritten, skip players turn if so, otherwise write to our tile (our vector element)
- 
-switch(nSquare) {
+ //So I figured out how to make this entire switch function significantly shorter
+	
+if(square[nSquare - 1] != ' '){ // -1 since vectors start at 0
+	std::cout << "\nUser attempted to overwrite used square, skipping turn.\n"; // Skip if overwrite attempt
+} else if (square[nSquare - 1] == ' ') { // If vector is empty, do the following
+	square[nSquare - 1] = input; // Write the input to the square
+	turns++; // Turn is counted
+} else {
+	std::cout << "Invalid input, moving to next players turn.\n"; // If anything else, skip
+}
+	
+/* switch(nSquare) {
   case 1:
     if(square[0] != ' ') {
        std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
@@ -117,7 +127,7 @@ switch(nSquare) {
     break;
 }
  
- 
+*/ 
  // Project our current vector
 std::cout << "        -        -         \n";
 std::cout << "   " << square[0] << "    -    " << square[1] << "   -     " << square[2] << "   \n";
