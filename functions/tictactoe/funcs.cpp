@@ -2,10 +2,10 @@
 #include <cstdlib>
 #include <vector>
 
-std::vector<char> square = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
-int turns = 0;
+std::vector<char> square = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}; // Where we store our inputs 
+int turns = 0; // We return this via a function called checkTurns();
 
-void gameInitialize() {
+void gameInitialize() { // Draw our board, show the player which numbers are correlated to which tile to place their character
  
 std::cout << "This is the board layout: \n\n";
  
@@ -26,9 +26,9 @@ std::cout << "Select the square you'd like by inputting the square number.\n";
 }
  
  
- 
- 
-void gameBoard(char input, int nSquare) { 
+
+// The switches can probably be their own function, but it doesn't really make too grand of a difference 
+void gameBoard(char input, int nSquare) { // Make sure a tile with a character can't be overwritten, skip players turn if so, otherwise write to our tile (our vector element)
  
 switch(nSquare) {
   case 1:
@@ -36,7 +36,7 @@ switch(nSquare) {
        std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
     } else {
        square[0] = input;
-       turns++;
+       turns++; // Count this as a valid turn if not attempting to overwrite
     }
     break;
  
@@ -118,7 +118,7 @@ switch(nSquare) {
 }
  
  
- 
+ // Project our current vector
 std::cout << "        -        -         \n";
 std::cout << "   " << square[0] << "    -    " << square[1] << "   -     " << square[2] << "   \n";
 std::cout << "        -        -         \n";
@@ -133,6 +133,9 @@ std::cout << "        -        -         \n";
  
  
 }
+
+/* I'm sure I could have figured out an more clean, easier way to do this, but it's just all possible winning combinations, checking for
+both combinations regarding character 'X' or regarding character 'O' */
 
 int isOver() {
 
@@ -176,6 +179,7 @@ int isOver() {
 
 }
 
+// Just returns the value of our turns variable to be used in the main program
 int checkTurns(){
 	return turns;
-}
+} 
