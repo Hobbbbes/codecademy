@@ -27,8 +27,7 @@ std::cout << "Select the square you'd like by inputting the square number.\n";
  
  
 
-// The switches can probably be their own function, but it doesn't really make too grand of a difference 
-void gameBoard(char input, int nSquare) { // Make sure a tile with a character can't be overwritten, skip players turn if so, otherwise write to our tile (our vector element)
+void gameBoard(char input, int nSquare) { )
  //So I figured out how to make this entire switch function significantly shorter
 	
 if(square[nSquare - 1] != ' '){ // -1 since vectors start at 0
@@ -40,94 +39,7 @@ if(square[nSquare - 1] != ' '){ // -1 since vectors start at 0
 	std::cout << "Invalid input, moving to next players turn.\n"; // If anything else, skip
 }
 	
-/* switch(nSquare) {
-  case 1:
-    if(square[0] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[0] = input;
-       turns++; // Count this as a valid turn if not attempting to overwrite
-    }
-    break;
- 
-  case 2:
-    if(square[1] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[1] = input;
-       turns++;
-    }
-    break;
- 
-  case 3:
-    if(square[2] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[2] = input;
-       turns++;
-    }
-    break;
- 
-  case 4:
-    if(square[3] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[3] = input;
-       turns++;
-    }
-    break;
- 
-  case 5:
-    if(square[4] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[4] = input;
-       turns++;
-    }
-    break;
- 
-  case 6:
-    if(square[5] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[5] = input;
-       turns++;
-    }
-    break;
- 
-  case 7:
-    if(square[6] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[6] = input;
-       turns++;
-    }
-    break;
- 
-  case 8:
-    if(square[7] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[7] = input;
-       turns++;
-    }
-    break;
- 
-  case 9:
-    if(square[8] != ' ') {
-       std::cout << "\nUser attempted to overwrite used square, skipping turn.\n";
-    } else {
-       square[8] = input;
-       turns++;
-    }
-    break;
- 
-  default:
-    std::cout << "Invalid input, moving to next players turn.\n";
-    break;
-}
- 
-*/ 
+
  // Project our current vector
 std::cout << "        -        -         \n";
 std::cout << "   " << square[0] << "    -    " << square[1] << "   -     " << square[2] << "   \n";
