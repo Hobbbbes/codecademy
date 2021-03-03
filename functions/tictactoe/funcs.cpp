@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cstdlib>
+#include <cstdlib> // I meant to use this library for a computer vs. human but ended up making it human vs. human
 #include <vector>
 
 std::vector<char> square = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '}; // Where we store our inputs 
