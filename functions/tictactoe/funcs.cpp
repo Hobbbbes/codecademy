@@ -27,7 +27,7 @@ std::cout << "Select the square you'd like by inputting the square number.\n";
  
  
 
-void gameBoard(char input, int nSquare) { )
+void gameBoard(char input, int nSquare) { 
  //So I figured out how to make this entire switch function significantly shorter
 	
 if(square[nSquare - 1] != ' '){ // -1 since vectors start at 0
